@@ -1,0 +1,99 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if message %}
+    <div class="alert alert-danger">{{ message }}</div>
+{% endif %}
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria;
+    height: 100%;
+    background-image: #ffff;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h1 {
+  text-align: center;
+}
+</style>
+<div class="container">
+    <div class="card card-body" style="border: 1px solid black; box-shadow: 0 0 10px black; background-color: #d9fbdb">
+        <h1>Medibuddy: Smart Disease Predictor</h1>
+        <br>
+        <h2>Model Accuracies:</h2>
+        <ul>
+            <li>Diabetes Model: <strong>92.54%</strong></li>
+            <li>Heart Disease Model: <strong>98.70%</strong></li>
+            <li>Parkinson Disease Model: <strong>96.66%</strong></li>
+            <li>Kidney Disease Model: <strong>99.16%</strong></li>
+        </ul>
+        <br>
+        <h3>Information about the Diseases:</h3>
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color:  #e3f3e6">
+                <h4>Diabetes</h4>
+                <p>Diabetes mellitus refers to a group of diseases that affect how your body uses blood sugar (glucose). Glucose is vital to your health because it's an important source of energy for the cells that make up your muscles and tissues. It's also your brain's main source of fuel. The underlying cause of diabetes varies by type. But, no matter what type of diabetes you have, it can lead to excess sugar in your blood. Too much sugar in your blood can lead to serious health problems.</p>
+                <h5>Symptoms</h5>
+                <ul>
+                    <li>Increased thirst</li>
+                    <li>Frequent urination</li>
+                    <li>Extreme hunger</li>
+                    <li>Unexplained weight loss</li>
+                    <li>Blurred vision</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color:  #e3f3e6">
+                <h4>Heart/ Cardiovascular Disease</h4>
+                <p>Cardiovascular disease (heart disease) refers to a group of diseases that affect the heart and blood vessels of your body. These diseases can affect one or many parts of your heart and /or blood vessels. A person may be symptomatic (physically experience the disease) or be asymptomatic (not feel anything at all).</p>
+                <h5>Symptoms</h5>
+                <ul>
+                    <li>Pounding or racing heart (palpitations)</li>
+                    <li>Chest pain</li>
+                    <li>Sweating</li>
+                    <li>Lightheadedness</li>
+                    <li>Shortness of breath</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color:  #e3f3e6 ">
+                <h4>Parkinson Disease</h4>
+                <p>Parkinson's disease is a progressive disorder that affects the nervous system and the parts of the body controlled by the nerves. Symptoms start slowly. Parkinson disease (PD) is a brain condition that causes problems with movement, mental health, sleep, pain and other health issues. PD gets worse over time. </p>
+                <h5>Symptoms</h5>
+                <ul>
+                    <li>Tremor.</li>
+                    <li>Slowed movement, known as bradykinesia.</li>
+                    <li>Rigid muscles.</li>
+                    <li>Impaired posture and balance.</li>
+                    <li>Loss of automatic movements.</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color:  #e3f3e6">
+                <h4>Chronic Kidney Disease</h4>
+                <p>Chronic kidney disease (CKD) means your kidneys are damaged and can’t filter blood the way they should. The disease is called “chronic” because the damage to your kidneys happens slowly over a long period of time. This damage can cause wastes to build up in your body. CKD can also cause other health problems.</p>
+                <h5>Symptoms</h5>
+                <ul>
+                    <li>Nausea</li>
+                    <li>Vomiting</li>
+                    <li>Fatigue and weakness</li>
+                    <li>Muscle twitches and cramps</li>
+                    <li>Loss of appetite</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

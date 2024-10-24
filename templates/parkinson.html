@@ -1,0 +1,161 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+body {
+    font-family: Cambria;
+    height: 100%;
+    background-image: #ffff;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+</style>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <center><h1 style="color:black;">Parkinson Disease Predictor</h1></center>
+        <div class="card card-body" style="border: 1px solid black; background-color: #d9fbdb">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="MDVP:Fo(Hz)" placeholder="MDVP:Fo(Hz)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="MDVP:Fhi(Hz)" placeholder="MDVP:Fhi(Hz)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="MDVP:Flo(Hz)" placeholder="MDVP:Flo(Hz)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="MDVP:Jitter(%)" placeholder="MDVP:Jitter(%)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="MDVP:Jitter(Abs)" placeholder="MDVP:Jitter(Abs)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="MDVP:RAP" placeholder="MDVP:RAP">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="MDVP:PPQ" placeholder="MDVP:PPQ">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="Jitter:DDP" placeholder="Jitter:DDP">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="MDVP:Shimmer" placeholder="MDVP:Shimmer">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="MDVP:Shimmer(dB)" placeholder="MDVP:Shimmer(dB)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="Shimmer:APQ3" placeholder="Shimmer:APQ3">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="Shimmer:APQ5" placeholder="Shimmer:APQ5">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="MDVP:APQ" placeholder="MDVP:APQ">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="Shimmer:DDA" placeholder="Shimmer:DDA">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="NHR" placeholder="NHR">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="HNR" placeholder="HNR">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="RPDE" placeholder="RPDE">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="DFA" placeholder="DFA">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="spread1" placeholder="Spread 1">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="spread2" placeholder="Spread 2">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="D2" placeholder="D2">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; background-color: #ffff" class="form-control" type="text" name="PPE" placeholder="PPE">
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+
+                <input style="background-color:  #0d8a02" type="submit" class="btn btn-info btn-block" value="Predict">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}
